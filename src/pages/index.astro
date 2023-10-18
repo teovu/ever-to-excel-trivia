@@ -1,0 +1,13 @@
+---
+// Import the necessary scripts and components
+import InteractiveTable from '../components/InteractiveTable.jsx'; // Adjust the import path if your component is located elsewhere
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Ever to Excel Trivia">
+	<main class="h-screen flex justify-center items-center bg-[#f0f0f0]">
+		<h1 class="absolute top-0 text-center w-full py-4 font-sans text-7xl font-bold text-[#00539b] cursor-default">Ever to Excel Trivia</h1>
+		<!-- Here, we render the InteractiveTable component; Astro will handle the React hydration for this component -->
+		<InteractiveTable client:load />
+	</main>
+</Layout>

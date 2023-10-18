@@ -1,0 +1,11 @@
+---
+interface Props {
+	text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<th class="border border-x-2 border-y-2 bg-[#00539b] text-[#f0f0f0] px-4 py-2 text-4xl hover:bg-[#003e74] cursor-default">
+			{text}
+</th>
