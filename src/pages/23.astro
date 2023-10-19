@@ -1,0 +1,39 @@
+---
+// Import the component. Note that we're NOT importing React here.
+import QuizComponentImage from '../components/QuizComponentImage.jsx';
+
+// Define your data here
+const quizData = {
+  uniqueID: "23",
+  question: "Why is this cat making this face?",
+  answers: [
+    { text: "It is preparing to fight another cat", isCorrect: false },
+    { text: "It is looking at itself in the mirror", isCorrect: false },
+    { text: "It just smelled some stinky feet", isCorrect: true },
+    { text: "It was called the wrong name", isCorrect: false },
+  ],
+  pointAmount: 200,
+  modalImageUrl: "https://i.imgur.com/rkDpkoa.png",
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Page</title>
+</head>
+<body>
+  <!-- Render your component and pass props directly -->
+  <QuizComponentImage
+  client:load
+  uniqueID={quizData.uniqueID}
+  question={quizData.question}
+  answers={quizData.answers}
+  pointAmount={quizData.pointAmount}
+  modalImageUrl={quizData.modalImageUrl}
+/>
+</body>
+</html>

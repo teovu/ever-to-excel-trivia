@@ -1,5 +1,6 @@
 // src/components/QuizComponent.jsx
 import React, { useState } from 'react';
+import CloseQuestionButton from './CloseQuestionButton';
 
 function QuizComponent({ uniqueID, question, answers, pointAmount }) {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -12,6 +13,7 @@ function QuizComponent({ uniqueID, question, answers, pointAmount }) {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <CloseQuestionButton/>
       <div id={`quiz-${uniqueID}`} className="flex flex-col items-center justify-center bg-white py-4 shadow-md w-4/5 h-4/5 rounded-2xl">
         <div className="w-full px-4">
           <h2 className="text-[#00539b] text-8xl font-semibold">{question}</h2>
