@@ -1,0 +1,37 @@
+---
+// Import the component. Note that we're NOT importing React here.
+import QuizComponent from '../components/QuizComponent.jsx';
+
+// Define your data here
+const quizData = {
+  uniqueID: "44",
+  question: "What is award winning Scottish DJ and record producer Calvin Harris's full name?",
+  answers: [
+    { text: "a) Adam Richard Wiles", isCorrect: true },
+    { text: "b) Calvin Harris Steward", isCorrect: false },
+    { text: "c) Michael Calvin Jackson", isCorrect: false },
+    { text: "d) Taylor Swift", isCorrect: false },
+  ],
+  pointAmount: 200,
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Page</title>
+</head>
+<body>
+  <!-- Render your component and pass props directly -->
+  <QuizComponent
+  client:load
+  uniqueID={quizData.uniqueID}
+  question={quizData.question}
+  answers={quizData.answers}
+  pointAmount={quizData.pointAmount}
+/>
+</body>
+</html>

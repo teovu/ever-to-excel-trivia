@@ -1,0 +1,36 @@
+---
+import QuizComponent from '../components/QuizComponent.jsx';
+
+// Define your data here
+const quizData = {
+  uniqueID: "32",
+  question: "What is the name of the legendary prince of the land of Fife as mentioned in the Gloryhammer Dundaxian Codex?",
+  answers: [
+    { text: "a) Hamish McHamish", isCorrect: false },
+    { text: "b) Connor McHonnor", isCorrect: false },
+    { text: "c) Alasdair Scott", isCorrect: false },
+    { text: "d) Angus McFife", isCorrect: true },
+  ],
+  pointAmount: 200,
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Page</title>
+</head>
+<body>
+  <!-- Render your component and pass props directly -->
+  <QuizComponent
+  client:load
+  uniqueID={quizData.uniqueID}
+  question={quizData.question}
+  answers={quizData.answers}
+  pointAmount={quizData.pointAmount}
+/>
+</body>
+</html>

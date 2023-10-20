@@ -1,0 +1,39 @@
+---
+import QuizComponentImage from '../components/QuizComponentImage.jsx';
+
+// Define your data here
+const quizData = {
+  uniqueID: "45",
+  question: "The first official international football match took place in 1872 and it was a match between Scotland and what other country?",
+  answers: [
+    { text: "a) England", isCorrect: true },
+    { text: "b) Ireland", isCorrect: false },
+    { text: "c) Wales", isCorrect: false },
+    { text: "d) France", isCorrect: false },
+  ],
+  pointAmount: 300,
+  modalImageUrl: "https://imgur.com/t7hZfrc",
+
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Page</title>
+</head>
+<body>
+  <!-- Render your component and pass props directly -->
+  <QuizComponentImage
+  client:load
+  uniqueID={quizData.uniqueID}
+  question={quizData.question}
+  answers={quizData.answers}
+  pointAmount={quizData.pointAmount}
+  modalImageUrl={quizData.modalImageUrl}
+/>
+</body>
+</html>

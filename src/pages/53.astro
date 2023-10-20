@@ -1,0 +1,32 @@
+---
+// Import the component. Note that we're NOT importing React here.
+import QuizComponentExtreme from '../components/QuizComponentExtreme.jsx';
+
+// Define your data here
+const quizData = {
+  uniqueID: "51",
+  question: "What is the \"Jubi Slide\"?",
+  correctAnswer: "A dance move",
+  pointAmount: 300,
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Page</title>
+</head>
+<body>
+  <!-- Render your component and pass props directly -->
+  <QuizComponentExtreme
+  client:load
+  uniqueID={quizData.uniqueID}
+  question={quizData.question}
+  correctAnswer={quizData.correctAnswer}
+  pointAmount={quizData.pointAmount}
+/>
+</body>
+</html>

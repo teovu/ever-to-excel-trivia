@@ -1,0 +1,39 @@
+---
+import QuizComponentImage from '../components/QuizComponentImage.jsx';
+
+// Define your data here
+const quizData = {
+  uniqueID: "43",
+  question: "Who posted the most liked image on Instagram?",
+  answers: [
+    { text: "a) Ariana Grande", isCorrect: false },
+    { text: "b) Lionel Messi", isCorrect: true },
+    { text: "c) Cristiano Ronaldo", isCorrect: false },
+    { text: "d) Kim Kardashian", isCorrect: false },
+  ],
+  pointAmount: 300,
+  modalImageUrl: "https://topnaija.ng/wp-content/uploads/2022/12/leo-messi.jpg",
+
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Page</title>
+</head>
+<body>
+  <!-- Render your component and pass props directly -->
+  <QuizComponentImage
+  client:load
+  uniqueID={quizData.uniqueID}
+  question={quizData.question}
+  answers={quizData.answers}
+  pointAmount={quizData.pointAmount}
+  modalImageUrl={quizData.modalImageUrl}
+/>
+</body>
+</html>

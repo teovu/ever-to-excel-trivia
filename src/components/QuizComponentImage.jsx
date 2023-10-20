@@ -64,7 +64,7 @@ function QuizComponentImage({ uniqueID, question, answers, pointAmount, modalIma
             shadow-lg  // Shadow effect
             "
           style={{ lineHeight: '0' }} // Helps to center the 'X' more accurately
-          aria-label="Open Modal"
+          aria-label="Timer"
         >
         <Timer initialSeconds={30} /> {/* Timer starts from 30 seconds */}
       </div>

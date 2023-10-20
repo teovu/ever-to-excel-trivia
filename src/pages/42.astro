@@ -1,0 +1,36 @@
+---
+import QuizComponent from '../components/QuizComponent.jsx';
+
+// Define your data here
+const quizData = {
+  uniqueID: "42",
+  question: "Which hotel in Saint Andrews is the priciest for a one-night stay in a single room for two adults this evening?",
+  answers: [
+    { text: "a) Farimont", isCorrect: false },
+    { text: "b) Rusacks", isCorrect: false },
+    { text: "c) Hotel du vin", isCorrect: false },
+    { text: "d) Old Course Hotel", isCorrect: true },
+  ],
+  pointAmount: 300,
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Page</title>
+</head>
+<body>
+  <!-- Render your component and pass props directly -->
+  <QuizComponent
+  client:load
+  uniqueID={quizData.uniqueID}
+  question={quizData.question}
+  answers={quizData.answers}
+  pointAmount={quizData.pointAmount}
+/>
+</body>
+</html>

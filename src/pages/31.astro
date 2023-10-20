@@ -1,0 +1,36 @@
+---
+import QuizComponent from '../components/QuizComponent.jsx';
+
+// Define your data here
+const quizData = {
+  uniqueID: "31",
+  question: "On July 10th 1817, Scottish inventor David Brewster published the patent for which of the following inventions?",
+  answers: [
+    { text: "a) Refrigerator", isCorrect: false },
+    { text: "b) Telephone", isCorrect: false },
+    { text: "c) Color photography", isCorrect: false },
+    { text: "d) Kaleidoscope", isCorrect: true },
+  ],
+  pointAmount: 200,
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Page</title>
+</head>
+<body>
+  <!-- Render your component and pass props directly -->
+  <QuizComponent
+  client:load
+  uniqueID={quizData.uniqueID}
+  question={quizData.question}
+  answers={quizData.answers}
+  pointAmount={quizData.pointAmount}
+/>
+</body>
+</html>

@@ -1,0 +1,39 @@
+---
+import QuizComponentImage from '../components/QuizComponentImage.jsx';
+
+// Define your data here
+const quizData = {
+  uniqueID: "21",
+  question: "Which landmark from Dundee is paid tribute to through a billboard in the game Grand Theft Auto: Vice City?",
+  answers: [
+    { text: "a) The RRS Discovery (boat)", isCorrect: true },
+    { text: "b) The Tay bridge", isCorrect: false },
+    { text: "c) The Law hill", isCorrect: false },
+    { text: "d) The V&A (museum)", isCorrect: false },
+  ],
+  pointAmount: 200,
+  modalImageUrl: "https://i.imgur.com/nVZ4qEE.jpg",
+
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Page</title>
+</head>
+<body>
+  <!-- Render your component and pass props directly -->
+  <QuizComponentImage
+  client:load
+  uniqueID={quizData.uniqueID}
+  question={quizData.question}
+  answers={quizData.answers}
+  pointAmount={quizData.pointAmount}
+  modalImageUrl={quizData.modalImageUrl}
+/>
+</body>
+</html>
