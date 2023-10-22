@@ -39,21 +39,26 @@ function QuizComponent({ uniqueID, question, answers, pointAmount }) {
             {answers.map((answer, index) => (
               <li key={index}>
                 <button
-                  onClick={() => handleAnswerClick(answer)}
-                  className={`
-                    w-full text-left py-2 px-4 rounded text-6xl my-2 cursor-pointer text-semi-bold
-                    transition-colors duration-300 focus:outline-none
-                    ${selectedAnswer === answer.text
-                      ? answer.isCorrect
-                        ? 'bg-[#00642f] text-white'
-                        : 'bg-[#b0140e] text-white'
-                      : 'bg-[#407eb4] text-white hover:bg-[#ffb400] hover:text-[#00539b]'}
-                    ${selectedAnswer === answer.text ? 'ring-4 ring-[#ffb400]' : 'focus:ring-4 focus:ring-[#ffb400]'}  // Added ring classes for focus and selected state.
-                  `}
-                  disabled={selectedAnswer !== null}
-                >
-                    <p class="p-1">{answer.text}</p>
-                </button>
+      onClick={() => handleAnswerClick(answer)}
+      className={`
+        w-full text-left py-2 px-4 rounded text-6xl my-2 cursor-pointer text-semi-bold
+        transition-colors duration-300 focus:outline-none
+        ${
+          // If an answer has been selected, reveal the correct or incorrect answers
+          selectedAnswer !== null
+            ? answer.isCorrect
+              ? 'bg-[#00642f] text-white' // Correct answer turns green
+              : selectedAnswer === answer.text 
+                ? 'bg-[#b0140e] text-white' // Selected incorrect answer turns red
+                : 'bg-[#407eb4] text-white hover:bg-[#ffb400] hover:text-[#00539b]' // Other options turn to default if not selected
+            : 'bg-[#407eb4] text-white hover:bg-[#ffb400] hover:text-[#00539b]' // Before selection, standard button styles
+        }
+        ${selectedAnswer === answer.text ? 'ring-8 ring-[#ffb400]' : 'focus:ring-4 focus:ring-[#ffb400]'}  // Added ring classes for focus and selected state.
+      `}
+      disabled={selectedAnswer !== null} // Disable buttons after an answer is selected
+    >
+      <p class="p-1">{answer.text}</p>
+    </button>
               </li>
             ))}
           </ul>
